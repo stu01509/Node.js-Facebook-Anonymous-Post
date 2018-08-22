@@ -46,7 +46,7 @@ $ npm install
 
 2. Setting Firebase confing.
 
-Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project, And add Firebase config, Then go to Firebase create a new project, And add Firebase config, Then click authentication enable sign-in method.
+Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project, And add Firebase config, Then click authentication enable sign-in method.
 
 ```Shell
   1. Open views/index.ejs
