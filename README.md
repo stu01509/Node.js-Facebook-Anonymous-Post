@@ -32,14 +32,14 @@ $ npm install
 
 1. Setting Facebook Graph API Access Token.
 
-Notice: Post to fan page require publish_pages and manage_pages [permission](https://developers.facebook.com/docs/facebook-login/permissions).
+  📌Notice: Post to fan page require publish_pages and manage_pages [permission](https://developers.facebook.com/docs/facebook-login/permissions).
 
 ```Shell
   1. Open routes/index.js
 
   2. Find graph.setAccessToken('Access_Token') #6;
 
-  3 Paste your Facebook Graph API Token.
+  3. Paste your Facebook Graph API Token.
 
 ```
 <img src="https://i.imgur.com/D4pEuDu.png">
@@ -53,14 +53,19 @@ Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project,
 
   2. Find const config  #64;
 
-  3 Paste your Firebase confing.
+  3. Paste your Firebase config.
 
 ```
-## Finished
+<img src="https://i.imgur.com/RM6ne8K.png">
+
+## Usage
+
+In project directory using node index.js, The app will listen on 3000 port, Running in localhost:3000
 
 ```Shell
-$ node server.js
+$ node index.js
 
-# demo page:  http://localhost:5000/
 ```
+<img src="https://i.imgur.com/i5im1hO.gif">
+
 
