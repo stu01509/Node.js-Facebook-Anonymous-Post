@@ -14,10 +14,10 @@ Simple Facebook anonymous post to fan page timeline system, Fast to submit user 
 
 ## Features
 
-* ** 🕑 Real time to submit user post.
-* ** 🖼️ Support user submit post with picture.
-* ** 🧖 Firebase authentication to avoid spamming.
-* ** 📝 Record remote user submit content, IP and User-Agent.
+*  🕑 Real time to submit user post.
+*  🖼️ Support user submit post with picture.
+*  🧖 Firebase authentication to avoid spamming.
+*  📝 Record remote user submit content, IP and User-Agent.
 
 ## Install 
 
@@ -32,7 +32,7 @@ $ npm install
 
 1. Setting Facebook Graph API Access Token.
 
-   📌Note: Post to fan page require publish_pages and manage_pages [permission](https://developers.facebook.com/docs/facebook-login/permissions).
+  📌Note: Post to fan page require publish_pages and manage_pages [permission](https://developers.facebook.com/docs/facebook-login/permissions).
 
 ```Shell
   1. Open routes/index.js
@@ -66,20 +66,20 @@ In project directory using node index.js, The app will listen on 3000 port, Runn
 $ node index.js
 
 ```
-<img src="https://i.imgur.com/5Er18jy.gif">
+<img width="600" src="https://i.imgur.com/5Er18jy.gif">
 
 ## Demo
 
-This project deploy on Azure free plan, Need a some time to wake up the app.
+This project deploy on Azure free plan, Need a some time to wake up the app.  
 🌐[Demo](https://nodejs-facebook-anonymous-post.azurewebsites.net/)
 
 ### Text Post
 
-<img src="https://i.imgur.com/7DU6R7P.gif">
+<img width="600" src="https://i.imgur.com/7DU6R7P.gif">
 
 ### Text and Picture Post
 
-<img src="https://i.imgur.com/Jpr1uZ1.gif">
+<img width="600" src="https://i.imgur.com/Jpr1uZ1.gif">
 
 ## Lisense
 MIT
