@@ -1,6 +1,10 @@
 // Loading Modules
-const fs = require('fs-extra');
+const fs = require('fs');
 const graph = require('fbgraph');
+
+// Facebook Graph API Access_Token
+graph.setAccessToken('EAAPSuFQJhfYBAI9RwzOvLE8qompAVTt0kQBexGyrZCEN5cN9VJBHZA28dLJ7vjRi5x27qDn1hE7ZAXfhFhN8RgNyJtf3QqQ5AKgX1tQ3h3lF5FSllgNxgv8Gi79q41JIANFoEC1lZAHLj9GD8gnoZApEmACspMQcwPeovhUWpFXZAChD9J5ZBJ0');
+
 
 exports.index = (req, res) => {
   res.render('index', {});
@@ -12,8 +16,6 @@ exports.bye = (req, res) => {
   res.render('bye', {});
 };
 exports.submit = (req, res) => {
-  // Facebook Graph API Access_Token
-  graph.setAccessToken('EAAPSuFQJhfYBAMxguiRmM24QUfOawiU96QEeoyRqWYodTGGQwbLmkK1ukUZAEYfIX0NOb1rdj56zCSgLl4rcPV4zYty7kxNWZBwQIq1dNBrYvRZAZB0UTwdcRNPi9eyynLojviwJSyUNDKlcPZAA0Pbhoo8nmGN8EJZCMO72QZCaFatnOAkn6Wl');
 
   // Get Submit Time
   const nowTime = new Date();
@@ -38,9 +40,9 @@ exports.submit = (req, res) => {
   fs.writeFile('tag.txt', addTag, () => {});
   console.log(`貼文#  ${tag}`);
 
-  // Post Content
+  // Post Style
   const Post = `
-  #告白陽中 ${tag} \r\n\r\n
+  #Nodejs-Facebook-Anonymous-Post${tag} \r\n\r\n
   ${comment} \r\n\r\n
   ${By} ${nickName} \r\n
   投稿日期: ${nowTime}`;

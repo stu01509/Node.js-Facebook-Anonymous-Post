@@ -1,29 +1,28 @@
 {
-  "name": "ymjh",
+  "name": "node.js-facebook-anonymous-post",
   "version": "1.0.0",
-  "description": "1",
+  "description": "Simple Node.js Facebook Anonymous Post System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js"
   },
-  "author": "1",
-  "license": "ISC",
+  "author": "stu01509",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "1"
+    "url": "git+https://github.com/stu01509/Node.js-Facebook-Anonymous-Post.git"
   },
   "keywords": [
-    "1"
+    "facebook",
+    "anonymous",
+    "express",
+    "graph api"
   ],
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.2",
-    "express-fileupload": "^0.4.0",
-    "fbgraph": "^1.4.4",
-    "firebase": "^5.3.0",
-    "fs-extra": "^5.0.0",
-    "request": "^2.87.0"
+    "fbgraph": "^1.4.4"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

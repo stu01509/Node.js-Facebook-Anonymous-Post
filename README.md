@@ -12,6 +12,13 @@
 
 Simple Facebook anonymous post to fan page timeline system, Fast to submit user post content, And using Firebase authentication to identify.
 
+## Features
+
+1. 🕑 Real time to submit user post.
+2. 🖼️ Support user submit post with picture.
+3. 🧖 Firebase authentication to avoid spamming.
+4. 📝 Record remote user submit content, IP and User-Agent.
+
 ## Install 
 
 ```Shell
@@ -21,16 +28,34 @@ $ npm install
 
 ```
 
-## Config 
+## Setting 
+
+1. Setting Facebook Graph API Access Token.
+
+Notice: Post to fan page require publish_pages and manage_pages [permission](https://developers.facebook.com/docs/facebook-login/permissions).
+
 ```Shell
-1. Open routes/index.js
+  1. Open routes/index.js
 
-2. Find graph.setAccessToken('');
+  2. Find graph.setAccessToken('Access_Token') #6;
 
-3 Paste your Facebook Graph API Token.
+  3 Paste your Facebook Graph API Token.
 
 ```
+<img src="https://i.imgur.com/D4pEuDu.png">
 
+2. Setting Firebase confing.
+
+Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project, And add Firebase config, Then go to Firebase create a new project, And add Firebase config, Then click authentication enable sign-in method.
+
+```Shell
+  1. Open views/index.ejs
+
+  2. Find const config  #64;
+
+  3 Paste your Firebase confing.
+
+```
 ## Finished
 
 ```Shell
