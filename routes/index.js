@@ -3,7 +3,7 @@ const fs = require('fs');
 const graph = require('fbgraph');
 
 // Facebook Graph API Access_Token
-graph.setAccessToken('EAAPSuFQJhfYBAI9RwzOvLE8qompAVTt0kQBexGyrZCEN5cN9VJBHZA28dLJ7vjRi5x27qDn1hE7ZAXfhFhN8RgNyJtf3QqQ5AKgX1tQ3h3lF5FSllgNxgv8Gi79q41JIANFoEC1lZAHLj9GD8gnoZApEmACspMQcwPeovhUWpFXZAChD9J5ZBJ0');
+graph.setAccessToken('Access_Token');
 
 
 exports.index = (req, res) => {

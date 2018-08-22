@@ -1,5 +1,0 @@
-const graph = require('fbgraph');
-
-graph.setAccessToken('EAAPSuFQJhfYBAMxguiRmM24QUfOawiU96QEeoyRqWYodTGGQwbLmkK1ukUZAEYfIX0NOb1rdj56zCSgLl4rcPV4zYty7kxNWZBwQIq1dNBrYvRZAZB0UTwdcRNPi9eyynLojviwJSyUNDKlcPZAA0Pbhoo8nmGN8EJZCMO72QZCaFatnOAkn6Wl');
-
-module.exports = post;
