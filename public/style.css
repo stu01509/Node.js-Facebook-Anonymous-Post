@@ -1,0 +1,50 @@
+        body {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .g-recaptcha-style {
+            width: 100%;
+            text-align: center;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
+            zoom: 1;
+        }
+
+        .footer {
+            background-color: #323237;
+            min-height: 30px;
+            width: 100%;
+        }
+
+        .copyright {
+            color: #e6e3e3;
+            line-height: 30px;
+            min-height: 30px;
+            padding: 7px 0;
+        }
+
+        .search {
+            background-image: url(https://images.pexels.com/photos/247780/pexels-photo-247780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .google-auth{
+            color:#fff;
+            background-color: #db4633;
+            transition: background-color .3s;
+        }
+        .google-auth:hover{
+            background-color: #f22a00;
+        }
+        .fb-auth{
+            color:#fff;
+            background-color: #3b579d;
+            transition: background-color .3s;
+        }
+        .fb-auth:hover{
+            background-color: #486dc7;
+        }

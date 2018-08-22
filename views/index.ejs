@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<% include ./head %>
+
+  <body>
+    <% include ./navbar %>
+    <% include ./modal %>
+    <div class="container">
+      <div class="row">      
+        <div class="col-12 border border-primary rounded mt-3">
+                <form action="./submit" id="comment_form" method="post" >
+                  <div class="form-group mt-3">
+                    <h3 class="item">投稿內容:</h3>
+                    <textarea class="form-control" id="" rows="6" name="comment" placeholder="在這裡輸入您的投稿內容。" required="required"></textarea>
+                    <br>
+                    <h3 class="item">暱稱:</h3>
+                    <input name="NickName" type="text" class="form-control" placeholder="選填" />
+                    <br>
+                    <h3 class="item">發文驗證:</h3>
+                    <input type="button" id="facebook" class="btn fb-auth" value="Facebook 驗證" />
+                    <input type="button" id="google" class="btn google-auth" value="Google 驗證" />
+                    <h4 id="authStatus"></h4>
+                    <br>
+                    <br>
+                    <div class="dropzone">
+                      <div class="info"></div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                      <input type="submit" id="submit" name="submit" class="btn btn-primary" disabled="disabled" value="投稿!" />
+                      <input type="reset" class="btn btn-secondary" value="清除表單">
+                    </div>
+                  </div>
+                </form>
+              </div>              
+          </div>
+        </div>
+      <% include ./footer %>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+      <script src="imgur.js"></script>
+      <script src="upload.js"></script>
+      <% include ./gtag %>
+      <script>
+        (function () {
+          $(document).ready(function () {
+            $("#myModal").modal('show');
+          });
+
+          document.getElementById('facebook').onclick = function () {
+            facebookSignIn()
+          }
+
+          document.getElementById('google').onclick = function () {
+            googleSignIn();
+          }
+
+          const authStatus = document.getElementById('authStatus');
+          const submitBtn = document.getElementById('submit');
+
+          const config = {
+            apiKey: "AIzaSyBkchElX1pnb-PIFZquftn2Z0GYKOh6ZUE",
+            authDomain: "anonymous-post-fb.firebaseapp.com",
+            databaseURL: "https://anonymous-post-fb.firebaseio.com",
+            projectId: "anonymous-post-fb",
+            storageBucket: "anonymous-post-fb.appspot.com",
+            messagingSenderId: "282759760617"
+          };
+
+          firebase.initializeApp(config);
+          const facebookProvider = new firebase.auth.FacebookAuthProvider();
+          const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+          function facebookSignIn() {
+            firebase.auth().signInWithPopup(facebookProvider)
+              .then(function (res) {
+                console.log(res);
+
+                authStatus.textContent = '驗證成功';
+                if (authStatus.classList.contains('text-danger')) {
+                  authStatus.classList.remove('text-danger');
+                }
+                authStatus.classList.add('text-success');
+                submitBtn.disabled = false;
+              }).catch(function (err) {
+                authStatus.textContent = '驗證失敗';
+                authStatus.classList.add('text-danger');
+              });
+          }
+
+          function googleSignIn() {
+            firebase.auth().signInWithPopup(googleProvider)
+              .then(function (res) {
+                console.log(res)
+
+                authStatus.textContent = '驗證成功';
+                if (authStatus.classList.contains('text-danger')) {
+                  authStatus.classList.remove('text-danger');
+                }
+                authStatus.classList.add('text-success');
+                submitBtn.disabled = false;
+              }).catch(function (err) {
+                console.log(err)
+                authStatus.textContent = '驗證失敗';
+                authStatus.classList.add('text-danger');
+              });
+          }
+        })()
+      </script>
+  </body>
+</html>
