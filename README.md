@@ -56,7 +56,7 @@ Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project,
 
 ```
 
-3. Setiing Post Tag Number.
+3. Setting Post Tag Number.
 
 ```Shell
   1. Open .env File.
