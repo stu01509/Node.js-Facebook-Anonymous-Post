@@ -66,7 +66,7 @@ Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project,
   3. Replace to Your Number.
 
 ```
-<img width="600" src="https://imgur.com/eqgCPaY">
+<img width="600" src="https://imgur.com/eqgCPaY.png">
 
 ## Usage
 
