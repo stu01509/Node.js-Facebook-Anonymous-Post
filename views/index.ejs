@@ -62,12 +62,12 @@
           const submitBtn = document.getElementById('submit');
 
           const config = {
-            apiKey: "apiKey",
-            authDomain: "authDomain",
-            databaseURL: "databaseURL",
-            projectId: "projectId",
-            storageBucket: "storageBucket",
-            messagingSenderId: "messagingSenderId"
+            apiKey: '<%= apiKey %>',
+            authDomain: '<%= authDomain %>',
+            databaseURL: '<%= databaseURL %>',
+            projectId: '<%= projectId %>',
+            storageBucket: '<%= storageBucket %>',
+            messagingSenderId: '<%= messagingSenderId %>'
           };
 
           firebase.initializeApp(config);
@@ -108,6 +108,15 @@
                 authStatus.classList.add('text-danger');
               });
           }
+
+          submitBtn.addEventListener('click', function(e){
+            if(authStatus.textContent !== '驗證成功'){
+              submitBtn.disabled = true;
+              authStatus.textContent = '請先驗證';
+              authStatus.classList.add('text-danger');
+              e.preventDefault();
+            }
+          })
         })()
       </script>
   </body>

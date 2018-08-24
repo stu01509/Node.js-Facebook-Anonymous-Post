@@ -2,12 +2,27 @@
 const fs = require('fs');
 const graph = require('fbgraph');
 
-// Facebook Graph API Access_Token
-graph.setAccessToken('Access_Token');
+// Loading Config
+require('dotenv').config();
+const env = process.env;
 
+// Facebook Graph API Access_Token
+graph.setAccessToken(env.Facebook_Access_Token);
+
+// Read Default Tag
+const defaultTag  = parseInt(env.tag, 10);
+let tag = defaultTag;
 
 exports.index = (req, res) => {
-  res.render('index', {});
+  res.render('index', {
+    // Render Firebase config
+    apiKey:  env.apiKey,
+    authDomain: env.authDomain,
+    databaseURL: env.databaseURL,
+    projectId: env.projectId,
+    storageBucket: env.storageBucket,
+    messagingSenderId: env.messagingSenderId,
+  });
 };
 exports.submitted = (req, res) => {
   res.render('submitted', {});
@@ -30,39 +45,32 @@ exports.submit = (req, res) => {
   const userAgent = req.headers['user-agent'];
 
   // Check Form NickName Hava a Value
-  let By = '';
-  if (nickName !== '') By = 'By:';
-
-  //  Read POST #Tag
-  const dataTag = fs.readFileSync('tag.txt', 'utf8');
-  const tag = parseInt(dataTag, 10);
-  const addTag = tag + 1;
-  fs.writeFile('tag.txt', addTag, () => {});
-  console.log(`貼文#  ${tag}`);
+  let by = '';
+  if (nickName !== '') by = 'By:';
 
   // Post Style
-  const Post = `
+  const post = `
   #Nodejs-Facebook-Anonymous-Post${tag} \r\n\r\n
   ${comment} \r\n\r\n
-  ${By} ${nickName} \r\n
+  ${by} ${nickName} \r\n
   投稿日期: ${nowTime}`;
 
   // Post Log
-  const Log = `
+  const log = `
   ${comment} \r\n\r\n
-  ${By} ${nickName} \r\n\r\n
+  ${by} ${nickName} \r\n\r\n
   IP: ${ip} \r\n\r\n
   UserAgent: ${userAgent}\r\n
   投稿日期: ${nowTime}`;
 
   // Write Log Data to Logs Folder
-  fs.writeFile(`Logs/${tag}.txt`, Log, () => {});
+  fs.writeFile(`Logs/${tag}.txt`, log, () => {});
 
   const wallPost = {
-    message: Post,
+    message: post,
   };
   const wallPostPhoto = {
-    message: Post,
+    message: post,
     url: postImgUrl,
   };
 
@@ -86,5 +94,8 @@ exports.submit = (req, res) => {
       }
     });
   }
+  // Add Tag
+  tag = tag+1;
+
   res.redirect('./submitted');
 };
