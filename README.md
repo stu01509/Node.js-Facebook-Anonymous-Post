@@ -35,28 +35,38 @@ $ npm install
   📌Note: Post to fan page require publish_pages and manage_pages [permission](https://developers.facebook.com/docs/facebook-login/permissions).
 
 ```Shell
-  1. Open routes/index.js
+  1. Open .env File.
 
-  2. Find graph.setAccessToken('Access_Token') #6;
+  2. Find Facebook_Access_Token = Your_Access_Token #2
 
-  3. Paste your Facebook Graph API Token.
+  3. Paste your Facebook Graph API Token to Replace Your Access_Token.
 
 ```
-<img src="https://i.imgur.com/D4pEuDu.png">
 
 2. Setting Firebase confing.
 
 Go to [Firebase](https://console.firebase.google.com/u/0/) cretae a new project, And add Firebase config, Then click authentication enable sign-in method.
 
 ```Shell
-  1. Open views/index.ejs
+  1. Open .env File.
 
-  2. Find const config  #64;
+  2. Find apiKey = Your_apiKey  #5;
 
-  3. Paste your Firebase config.
+  3. Paste your Firebase config to Replace All Value.
 
 ```
-<img src="https://i.imgur.com/RM6ne8K.png">
+
+3. Setiing Post Tag Number.
+
+```Shell
+  1. Open .env File.
+
+  2. Find tag =  #13;
+
+  3. Replace to Your Number.
+
+```
+<img width="600" src="https://imgur.com/eqgCPaY">
 
 ## Usage
 
