@@ -91,5 +91,5 @@ This project deploy on Azure free plan, Need a some time to wake up the app.
 
 <img width="600" src="https://i.imgur.com/Jpr1uZ1.gif">
 
-## Lisense
+## License
 MIT
